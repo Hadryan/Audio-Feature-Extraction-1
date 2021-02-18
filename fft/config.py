@@ -71,12 +71,16 @@ def plotPeaks(peaks,frequencyRange,name,showPlot):
     plt.clf()
 
 
+
+
+
+
 def splitSong(file,start,end,parts):
 
     song = songpath + file
     audio = AudioSegment.from_wav(song)
     curraudio = audio[start*len(audio)//parts:(end*len(audio)//parts) - 1]
-    pt = songpath + 'temp'+'.wav'
+    pt = songpath + 'temp'+str(start)+'.wav'
     curraudio.export(pt, format="wav")
     return pt
 
