@@ -21,6 +21,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             <state relative-caret-position="187">
               <caret line="20" column="56" selection-start-line="20" selection-start-column="56" selection-end-line="20" selection-end-column="56" />
 =======
@@ -51,6 +52,10 @@
             <state relative-caret-position="289">
               <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
 >>>>>>> parent of 6d2be79 (Extra files)
+=======
+            <state relative-caret-position="289">
+              <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+>>>>>>> parent of 6d2be79... Extra files
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
               </folding>
@@ -61,6 +66,7 @@
       <file leaf-file-name="graphicize.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/graphicize.py">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -90,6 +96,9 @@
 =======
             <state relative-caret-position="204">
 >>>>>>> parent of 6d2be79 (Extra files)
+=======
+            <state relative-caret-position="204">
+>>>>>>> parent of 6d2be79... Extra files
               <caret line="19" column="31" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
               <folding>
                 <element signature="e#0#100#0" expanded="true" />
@@ -101,6 +110,7 @@
       <file leaf-file-name="config.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config.py">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -130,6 +140,9 @@
 =======
             <state relative-caret-position="17">
 >>>>>>> parent of 6d2be79 (Extra files)
+=======
+            <state relative-caret-position="17">
+>>>>>>> parent of 6d2be79... Extra files
               <caret line="18" column="12" selection-start-line="18" selection-end-line="19" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
@@ -160,6 +173,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             <state relative-caret-position="136">
 =======
             <state relative-caret-position="119">
@@ -182,6 +196,9 @@
 =======
             <state relative-caret-position="119">
 >>>>>>> parent of 6d2be79 (Extra files)
+=======
+            <state relative-caret-position="119">
+>>>>>>> parent of 6d2be79... Extra files
               <caret line="8" column="1" selection-start-line="16" selection-start-column="60" selection-end-line="16" selection-end-column="68" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
@@ -647,6 +664,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         <state relative-caret-position="-102">
           <caret line="18" column="12" selection-start-line="18" selection-end-line="19" />
 =======
@@ -677,12 +695,17 @@
         <state relative-caret-position="204">
           <caret line="19" column="31" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
 >>>>>>> parent of 6d2be79 (Extra files)
+=======
+        <state relative-caret-position="204">
+          <caret line="19" column="31" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
+>>>>>>> parent of 6d2be79... Extra files
           <folding>
             <element signature="e#0#100#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -752,10 +775,19 @@
           <folding>
             <element signature="e#0#9#0" expanded="true" />
 >>>>>>> parent of 6d2be79 (Extra files)
+=======
+    <entry file="file://$PROJECT_DIR$/deez.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="8" column="1" selection-start-line="16" selection-start-column="60" selection-end-line="16" selection-end-column="68" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+>>>>>>> parent of 6d2be79... Extra files
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -791,10 +823,13 @@
 =======
 >>>>>>> parent of 6d2be79 (Extra files)
 =======
+=======
+>>>>>>> parent of 6d2be79... Extra files
     <entry file="file://$PROJECT_DIR$/config.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="18" column="12" selection-start-line="18" selection-end-line="19" />
+<<<<<<< HEAD
 >>>>>>> parent of 6d2be79 (Extra files)
 =======
 >>>>>>> parent of 6d2be79 (Extra files)
@@ -804,6 +839,8 @@
 >>>>>>> parent of 6d2be79 (Extra files)
 =======
 >>>>>>> parent of 6d2be79 (Extra files)
+=======
+>>>>>>> parent of 6d2be79... Extra files
           <folding>
             <element signature="e#0#28#0" expanded="true" />
           </folding>
@@ -812,6 +849,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/examplefft.py">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -849,6 +887,10 @@
         <state relative-caret-position="289">
           <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
 >>>>>>> parent of 6d2be79 (Extra files)
+=======
+        <state relative-caret-position="289">
+          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+>>>>>>> parent of 6d2be79... Extra files
           <folding>
             <element signature="e#0#13#0" expanded="true" />
           </folding>
