@@ -13,7 +13,7 @@ amount = 10
 #     com = "spleeter separate -o splitouput -B librosa -p spleeter:4stems " + audioin
 #     os.system(com)
 
-file = config.splitSong('logic.wav', 0, 1, 2)
+file = config.splitSong('letgo.wav', 0, 1, 4)
 com = "spleeter separate -o wavs\\splitoutput -B librosa -p spleeter:4stems " + file
 os.system(com)
 print(file)
