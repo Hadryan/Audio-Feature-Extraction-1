@@ -6,9 +6,6 @@ from scipy.signal import find_peaks
 from matplotlib.pyplot import figure
 from scipy import signal
 
-
-songpath = 'wavs\\'
-
 def getSpectrogramParameters(file, startPos, endPos, parts,M):
     rate, curraudio, timeLength = loadSong(file, startPos, endPos, parts)
 
@@ -20,7 +17,7 @@ def getSpectrogramParameters(file, startPos, endPos, parts,M):
     return frequencies, times, S, timeLength
 
 def loadSong(file,start,end,parts):
-    song = songpath + file
+    song = 'wavs\\' + file
     rate, audio = wavfile.read(song)
     audio = np.mean(audio, axis=1)
     curraudio = audio[start*len(audio)//parts:end*len(audio)//parts - 1]
@@ -40,14 +37,14 @@ def plotSpectrogram(times,newfreqs,newSx,showPlot):
     plt.clf()
 
 
-def getPeaks(F, frequencies, prom, height, lowerFreqValue, upperFreqValue):
+def getPeaks(F, frequencies, prom, height, lowerFreqValue, upperFreqValue, width = None):
     lowerFreqPos, upperFreqPos = getFrequencies(frequencies, lowerFreqValue, upperFreqValue)
     figure(num=None, figsize=(15, 6), dpi=80, facecolor='w', edgecolor='k')
     frequencyRange = 0
     for i in range(lowerFreqPos, upperFreqPos):
         frequencyRange += F.T[i]
     frequencyRange /= (upperFreqPos - lowerFreqPos)
-    peaks, _ = find_peaks(frequencyRange, prominence=prom, height=height)  # BEST!
+    peaks, _ = find_peaks(frequencyRange, prominence=prom, height=height, distance = width)  # BEST!
 
     return peaks,frequencyRange
 
@@ -72,11 +69,15 @@ def plotPeaks(peaks,frequencyRange,name,showPlot):
 
 
 def splitSong(file,start,end,parts):
+    typ = file.split('.')[1]
+    if typ == 'mp3':
+        audio = AudioSegment.from_mp3('mp3\\' + file)
+        pt = 'mp3\\' + 'temp' + '.mp3'
 
-    song = songpath + file
-    audio = AudioSegment.from_wav(song)
+    else:
+        audio = AudioSegment.from_wav('wavs\\' + file)
+        pt = 'wavs\\' + 'temp' + '.wav'
     curraudio = audio[start*len(audio)//parts:(end*len(audio)//parts) - 1]
-    pt = songpath + 'temp'+'.wav'
-    curraudio.export(pt, format="wav")
+    curraudio.export(pt)
     return pt
 
