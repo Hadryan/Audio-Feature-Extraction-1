@@ -11,11 +11,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="examplefft.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="examplefft.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/examplefft.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="311">
-              <caret line="41" column="26" lean-forward="true" selection-start-line="41" selection-start-column="26" selection-end-line="41" selection-end-column="26" />
+            <state relative-caret-position="306">
+              <caret line="30" column="48" selection-start-line="30" selection-start-column="48" selection-end-line="30" selection-end-column="48" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
               </folding>
@@ -23,13 +23,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="graphicize.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="graphicize.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/graphicize.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="50" column="25" lean-forward="true" selection-start-line="50" selection-start-column="25" selection-end-line="50" selection-end-column="25" />
+            <state relative-caret-position="357">
+              <caret line="21" column="24" lean-forward="true" selection-start-line="21" selection-start-column="24" selection-end-line="21" selection-end-column="24" />
               <folding>
-                <element signature="e#0#114#0" expanded="true" />
+                <element signature="e#0#169#0" expanded="true" />
+                <element signature="e#1076#1122#0" />
               </folding>
             </state>
           </provider>
@@ -43,18 +44,13 @@
       <file leaf-file-name="config.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="430">
+            <state relative-caret-position="1258">
               <caret line="80" column="24" selection-start-line="80" selection-start-column="24" selection-end-line="80" selection-end-column="24" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
               </folding>
             </state>
           </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="peaksSnare.png" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/peaks/peaksSnare.png">
-          <provider selected="true" editor-type-id="images" />
         </entry>
       </file>
       <file leaf-file-name="peaksBass.png" pinned="false" current-in-tab="false">
@@ -70,17 +66,8 @@
       <file leaf-file-name="equalizer_bar.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/equalizer_bar.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1224">
-              <caret line="76" column="40" selection-start-line="76" selection-start-column="40" selection-end-line="76" selection-end-column="40" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="deez.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/deez.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="23" column="10" selection-start-line="23" selection-start-column="10" selection-end-line="23" selection-end-column="10" />
+            <state relative-caret-position="1547">
+              <caret line="95" column="24" selection-start-line="95" selection-start-column="8" selection-end-line="95" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -96,10 +83,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>fft</find>
-      <find>input_length</find>
-      <find>UserWarning</find>
-      <find>axis</find>
       <find>plot</find>
       <find>start</find>
       <find>paintEvent</find>
@@ -123,9 +106,13 @@
       <find>splitSong</find>
       <find>set_frame</find>
       <find>framar</find>
-      <find>set_label</find>
       <find>static_label</find>
       <find>QPoint</find>
+      <find>_trigger_refresh</find>
+      <find>doAnimation</find>
+      <find>anim</find>
+      <find>set_label</find>
+      <find>start_time</find>
     </findStrings>
   </component>
   <component name="IdeDocumentHistory">
@@ -372,12 +359,10 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="7" />
+      <option name="time" value="9" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/magnitudes.png" />
-    <entry file="file://$PROJECT_DIR$/pitches1.png" />
     <entry file="file://$PROJECT_DIR$/pitches2.png" />
     <entry file="file://$PROJECT_DIR$/pitches3.png" />
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/untitled5/Lib/site-packages/scipy/signal/windows/windows.py">
@@ -518,25 +503,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/equalizer_bar.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1224">
-          <caret line="76" column="40" selection-start-line="76" selection-start-column="40" selection-end-line="76" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/peaks/peaksSnare.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/peaks/peaksKick.png">
       <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$USER_HOME$/.PyCharmCE2018.1/system/python_stubs/1643265913/PyQt5/QtWidgets/QWidget.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1598">
-          <caret line="96" column="8" selection-start-line="96" selection-start-column="8" selection-end-line="96" selection-end-column="8" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/peaks/peaksBass.png">
       <provider selected="true" editor-type-id="images" />
@@ -544,9 +515,16 @@
     <entry file="file://$PROJECT_DIR$/peaks/peaksHihat.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/equalizer_bar.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1547">
+          <caret line="95" column="24" selection-start-line="95" selection-start-column="8" selection-end-line="95" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/config.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="430">
+        <state relative-caret-position="1258">
           <caret line="80" column="24" selection-start-line="80" selection-start-column="24" selection-end-line="80" selection-end-column="24" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
@@ -554,22 +532,44 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/graphicize.py">
+    <entry file="file://$USER_HOME$/.PyCharmCE2018.1/system/python_stubs/1643265913/PyQt5/QtWidgets/QLabel.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="50" column="25" lean-forward="true" selection-start-line="50" selection-start-column="25" selection-end-line="50" selection-end-column="25" />
-          <folding>
-            <element signature="e#0#114#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="457">
+          <caret line="192" column="8" selection-start-line="192" selection-start-column="8" selection-end-line="192" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharmCE2018.1/system/python_stubs/1643265913/PyQt5/QtWidgets/QFrame.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="202">
+          <caret line="159" column="8" selection-start-line="159" selection-start-column="8" selection-end-line="159" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharmCE2018.1/system/python_stubs/1643265913/PyQt5/QtWidgets/QWidget.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="470">
+          <caret line="550" column="36" selection-start-line="550" selection-start-column="25" selection-end-line="550" selection-end-column="36" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/examplefft.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="311">
-          <caret line="41" column="26" lean-forward="true" selection-start-line="41" selection-start-column="26" selection-end-line="41" selection-end-column="26" />
+        <state relative-caret-position="306">
+          <caret line="30" column="48" selection-start-line="30" selection-start-column="48" selection-end-line="30" selection-end-column="48" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/graphicize.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="24" lean-forward="true" selection-start-line="21" selection-start-column="24" selection-end-line="21" selection-end-column="24" />
+          <folding>
+            <element signature="e#0#169#0" expanded="true" />
+            <element signature="e#1076#1122#0" />
           </folding>
         </state>
       </provider>
