@@ -40,10 +40,20 @@ config.plotPeaks(bassPeaks, frequencyRange, 'Bass', showPlot=False)
 bassTimes = times[bassPeaks]
 
 all_frequencies_times = []
+all_frequencies_times.append(bassTimes)
 all_frequencies_times.append(kickTimes)
 all_frequencies_times.append(snareTimes)
 all_frequencies_times.append(hihatTimes)
 all_frequencies_times.append(bassTimes)
+all_frequencies_times.append(kickTimes)
+all_frequencies_times.append(snareTimes)
+all_frequencies_times.append(kickTimes)
+all_frequencies_times.append(snareTimes)
+all_frequencies_times.append(hihatTimes)
+all_frequencies_times.append(kickTimes)
+all_frequencies_times.append(hihatTimes)
+
+all_frequencies_times.append(snareTimes)
 
 qApp = QApplication(sys.argv)
 
