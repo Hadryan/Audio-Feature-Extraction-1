@@ -7,8 +7,8 @@ import librosa
 
 
 M = 2048
-drums = 'splitoutput\\temp0\\drums.wav'
-bass = 'splitoutput\\temp0\\bass.wav'
+drums = 'splitoutput\\templetgo1-3\\drums.wav'
+bass = 'splitoutput\\templetgo1-3\\bass.wav'
 volume = 0.3
 startPos = 1
 endPos = 2
@@ -40,22 +40,12 @@ config.plotPeaks(bassPeaks, frequencyRange, 'Bass', showPlot=False)
 bassTimes = times[bassPeaks]
 
 all_frequencies_times = []
-all_frequencies_times.append(bassTimes)
-all_frequencies_times.append(kickTimes)
-all_frequencies_times.append(snareTimes)
 all_frequencies_times.append(hihatTimes)
 all_frequencies_times.append(bassTimes)
 all_frequencies_times.append(kickTimes)
-all_frequencies_times.append(snareTimes)
-all_frequencies_times.append(kickTimes)
-all_frequencies_times.append(snareTimes)
-all_frequencies_times.append(hihatTimes)
-all_frequencies_times.append(kickTimes)
-all_frequencies_times.append(hihatTimes)
-
 all_frequencies_times.append(snareTimes)
 
 qApp = QApplication(sys.argv)
 
-fullsong = config.splitSong('letgo.mp3', 0, 1, 4)
+fullsong = config.splitSong('letgo.mp3', 1, 3, 4)
 graphicize.startProgram(qApp, fullsong, startPos, endPos, parts, volume, all_frequencies_times)

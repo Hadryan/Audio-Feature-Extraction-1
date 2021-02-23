@@ -1,11 +1,10 @@
 from PyQt5.QtWidgets import QMainWindow, QLabel, QFrame, QWidget, QVBoxLayout, QGraphicsOpacityEffect, QPushButton, QGraphicsWidget, QHBoxLayout, QGraphicsColorizeEffect
 from PyQt5.QtCore import QTimer, QPropertyAnimation, QRect, QParallelAnimationGroup, Qt, QPoint
 from PyQt5.QtCore import pyqtSlot,QSize
-from PyQt5.QtGui import QImage, QPixmap, QPainter, QPen, QGuiApplication, QBrush, QColor
+from PyQt5.QtGui import QImage, QPixmap, QPainter, QPen, QGuiApplication, QBrush, QColor, QRadialGradient
 from pygame import mixer  # Load the popular external library
 from pydub import AudioSegment
 import numpy
-
 
 class MainSong():
 
@@ -30,11 +29,33 @@ class MainSong():
         self.song.quit()
         print('Song stopped')
 
+class widgetCircle(QLabel):
+    def __init__(self, MainWindow, allColors, size, brush_size, start_pos):
+        QWidget.__init__(self, parent=MainWindow)
+        self.start_pos = start_pos
+        self.color = allColors
+        self.brush_size = brush_size
+        self.size = size
+        self.width = MainWindow.width - 200
+        self.height = MainWindow.height - 200
+        self.setGeometry((MainWindow.width - self.width)/2, (MainWindow.height - self.height)/2, self.width, self.height)
+        self.setStyleSheet('background-color: rgba(255, 255, 255, 0);')
+
+    def paintEvent(self, event):
+        paint = QPainter(self)
+        paint.setOpacity(.6)
+        paint.setRenderHint(QPainter.Antialiasing)
+        #a = QBrush(Qt.magenta)
+        #paint.setBrush(a)
+        paint.setPen(QPen(Qt.darkCyan, self.brush_size, Qt.SolidLine))
+        paint.drawEllipse(self.width - (self.width + self.size) / 2, self.height - (self.height + self.size) / 2, self.size, self.size)
 
 class widget(QLabel):
-    def __init__(self, MainWindow, color, size):
+    def __init__(self, MainWindow, allColors, size, brush_size, start_pos):
         QWidget.__init__(self, parent=MainWindow)
-        self.color = color
+        self.start_pos = start_pos
+        self.color = allColors
+        self.brush_size = brush_size
         self.size = size
         self.width = MainWindow.width - 200
         self.height = MainWindow.height - 200
@@ -47,8 +68,14 @@ class widget(QLabel):
         paint = QPainter(self)
         paint.setOpacity(1)
         paint.setRenderHint(QPainter.Antialiasing)
-        paint.setPen(QPen(self.color, 6, Qt.SolidLine))
-        paint.drawEllipse(self.width - (self.width + self.size)/2, self.height - (self.height + self.size)/2, self.size, self.size)
+        value = 10
+        #a = QBrush(Qt.darkCyan)
+        #paint.setBrush(a)
+        #paint.drawEllipse(self.width - (self.width + self.size) / 2, self.height - (self.height + self.size) / 2, self.size, self.size)
+        for i in range(0,value):
+            paint.setPen(QPen(QColor((self.color[0] + self.color[1]*i/value)% 255, (self.color[1]+ self.color[2]*i/value)%255, (self.color[2]+ self.color[0]*i/value)%255), self.brush_size, Qt.SolidLine))
+            paint.drawArc(self.width - (self.width + self.size) / 2, self.height - (self.height + self.size) / 2,
+                          self.size, self.size, self.start_pos + 360/value*i*16, 1000/value)
 
 class MainWindow(QMainWindow):
     # constructor
@@ -60,8 +87,11 @@ class MainWindow(QMainWindow):
         self.height = 800
         self.times = all_frequencies_times
         self.amount = numpy.array(self.times).shape[0]
-
-        self.set_widgets()
+        self.child_widget = self.set_widgets('circle')
+        self.child_widget_circle = self.set_widgets('arc')
+        #self.black_rectangle = QLabel(self)
+        #self.black_rectangle.setGeometry(0, self.height/2-10, self.width, 20)
+        #self.black_rectangle.setStyleSheet('background-color: rgba(0, 255, 255, 5);')
         self.set_static_frame()
         self.set_frame()
         self.startDetect()
@@ -72,19 +102,30 @@ class MainWindow(QMainWindow):
 
         self.show()
 
-    def set_widgets(self):
-        self.child_widget = []
-        self.child_widget_red = []
-        changer = 50
+    def set_widgets(self, widget_type):
+        self.amount_rings = 6
+        child_widget = [[None for i in range(self.amount)] for j in range(self.amount_rings)]
+
         for i in reversed(range(0,self.amount)):
-            child = widget(self, QColor(20,100 ,100+ changer), 0+30*i)
-            self.child_widget.append(child)
-            changer +=13
-        changer = 20
-        for i in (range(0,self.amount)):
-            child = widget(self, QColor(150, 0, 50+changer), 0+30*i +15)
-            self.child_widget_red.append(child)
-            changer +=12
+            color = (i % 3) * 100
+            color2 = ((i + 1) % 3) * 100
+            color3 = ((i + 2) % 3) * 100
+            allColors = [color, color2, color3]
+            for j in range(0,self.amount_rings):
+                if widget_type == 'arc':
+                    child = widget(self, allColors,  30*j + 30*self.amount_rings*i, 3 + i, 2*360*i)
+                elif widget_type == 'circle':
+                    child = widgetCircle(self, allColors, 30 * j + 30 * self.amount_rings * i, 3 + i, 2 * 360 * i)
+                child_widget[j][i] = child
+                effect = QGraphicsOpacityEffect()
+                child_widget[j][i].setGraphicsEffect(effect)
+                self.an = QPropertyAnimation(effect, b"opacity")
+                self.an.setDuration(0 + i * 50)
+                self.an.setStartValue(0)
+                self.an.setEndValue(0)
+                self.an.start()
+        return child_widget
+
 
 
     def startSong(self,file, start_pos, end_pos, parts,volume):
@@ -128,8 +169,6 @@ class MainWindow(QMainWindow):
                 paint.drawEllipse(i * startPosX, 0, 50, 50)
             self.update()
 
-
-
     @pyqtSlot()
     def on_click(self):
         self.button_count+=1
@@ -140,7 +179,6 @@ class MainWindow(QMainWindow):
             self.main_song.song.music.pause()
             self.update()
             self.button1.setText("Unpause")
-
 
     def initUI(self):
         self.setStyleSheet("background-color: black;")
@@ -163,11 +201,9 @@ class MainWindow(QMainWindow):
                 self.doAnimation(i)
                 self.iterate[i] += 1
 
-
     def startDetect(self):
 
-        self.anim = [None] * self.amount
-        self.animo = [None] * self.amount
+        self.anim = [[0 for i in range(self.amount)] for j in range(self.amount_rings)]
         self.anim_group = [None] * self.amount
         self.iterate = [0 for x in range(self.amount)]
         self.qTimer = QTimer()
@@ -175,37 +211,31 @@ class MainWindow(QMainWindow):
         self.qTimer.start()
 
     def doAnimation(self, which_animation):
-        effect = QGraphicsOpacityEffect()
-        self.child_widget[which_animation].setGraphicsEffect(effect)
-        self.anim[which_animation] = QPropertyAnimation(effect, b"opacity")
-        self.anim[which_animation].setDuration(700)
-        self.anim[which_animation].setStartValue(1)
-        self.anim[which_animation].setEndValue(0)
-
-        effect2 = QGraphicsOpacityEffect()
-        self.child_widget_red[which_animation].setGraphicsEffect(effect2)
-        self.animo[which_animation] = QPropertyAnimation(effect2, b"opacity")
-        self.animo[which_animation].setDuration(1200)
-        self.animo[which_animation].setStartValue(1)
-        self.animo[which_animation].setEndValue(0)
-
         self.anim_group[which_animation] = QParallelAnimationGroup()
-        self.anim_group[which_animation].addAnimation(self.anim[which_animation])
-        self.anim_group[which_animation].addAnimation(self.animo[which_animation])
+        for i in range(0,len(self.child_widget)):
+            effect = QGraphicsOpacityEffect()
+            self.child_widget[i][which_animation].setGraphicsEffect(effect)
+            self.anim[i][which_animation] = QPropertyAnimation(effect, b"opacity")
+            self.anim[i][which_animation].setDuration(500 + i*100)
+            self.anim[i][which_animation].setStartValue(1)
+            self.anim[i][which_animation].setEndValue(0)
+            self.anim_group[which_animation].addAnimation(self.anim[i][which_animation])
 
+            effect2 = QGraphicsOpacityEffect()
+            self.child_widget_circle[i][which_animation].setGraphicsEffect(effect2)
+            self.anim[i][which_animation] = QPropertyAnimation(effect2, b"opacity")
+            self.anim[i][which_animation].setDuration(500 + i*100)
+            self.anim[i][which_animation].setStartValue(1)
+            self.anim[i][which_animation].setEndValue(0)
+            self.anim_group[which_animation].addAnimation(self.anim[i][which_animation])
         self.anim_group[which_animation].start()
-
-
-
 
     def closeEvent(self, event):
         print('closing')
         self.deleteLater()
 
-
 def startProgram(q_app, file, start_pos, end_pos, parts, volume, all_frequencies_times):
     import sys
-
     def my_excepthook(type, value, tback):
         # log the exception here
 
